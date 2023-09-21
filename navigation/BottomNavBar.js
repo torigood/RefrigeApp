@@ -1,4 +1,4 @@
-import { View, Image, StyleSheet } from 'react-native';
+import { Text, View, Image, StyleSheet } from 'react-native';
 import * as React from 'react';
 
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
@@ -11,6 +11,11 @@ import News from '../screens/News';
 import Refrige from '../screens/Refrige';
 import Profile from '../screens/Profile';
 import { StackNav } from './StackNav';
+import CustomTabLabelHome from '../CustomTabLabels/CustomTabLabelHome';
+import CustomTabLabelStore from '../CustomTabLabels/CustomTabLabelStore';
+import CustomTabLabelRefrige from '../CustomTabLabels/CustomTabLabelRefrige';
+import CustomTabLabelNews from '../CustomTabLabels/CustomTabLabelNews';
+import CustomTabLabelProfile from '../CustomTabLabels/CustomTabLabelProfile';
 
 // Screen Names
 const homeName = "레시피";
@@ -22,7 +27,7 @@ const profileName = "내 정보";
 const Tab = createBottomTabNavigator();
 
 const BottomNavBar = () => {
-
+    
     const recipeIcon = require('../assets/images/icons/레시피아이콘.png')
     const storeIcon = require('../assets/images/icons/스토어아이콘.png')
     const refrigeIcon = require('../assets/images/icons/냉장고아이콘.png')
@@ -64,7 +69,9 @@ const BottomNavBar = () => {
                             </View>
                         )
                     },
-                    tabBarLabelStyle: { marginLeft: 30 }
+                    tabBarLabel: ({ focused }) => (
+                        <CustomTabLabelHome label={homeName} focused={focused} />
+                      ),
                 }}
                 />
                 <Tab.Screen 
@@ -83,7 +90,9 @@ const BottomNavBar = () => {
                             </View>
                         )
                     },
-                    tabBarLabelStyle: { marginLeft: 10 }
+                    tabBarLabel: ({ focused }) => (
+                        <CustomTabLabelStore label={storeName} focused={focused} />
+                      ),
                 }}
                 />
                 <Tab.Screen 
@@ -101,6 +110,9 @@ const BottomNavBar = () => {
                             </View>
                         )
                     },
+                    tabBarLabel: ({ focused }) => (
+                        <CustomTabLabelRefrige label={storeName} focused={focused} />
+                      ),
                 }}
                 />
                 <Tab.Screen 
@@ -119,7 +131,9 @@ const BottomNavBar = () => {
                             </View>
                         )
                     },
-                    tabBarLabelStyle: { marginRight: 10 }
+                    tabBarLabel: ({ focused }) => (
+                        <CustomTabLabelNews label={newsName} focused={focused} />
+                      ),
                 }}
                 />
                 <Tab.Screen 
@@ -138,7 +152,9 @@ const BottomNavBar = () => {
                             </View>
                         )
                     },
-                    tabBarLabelStyle: { marginRight: 30 }
+                    tabBarLabel: ({ focused }) => (
+                        <CustomTabLabelProfile label={profileName} focused={focused} />
+                      ),
                 }}
                 />
             </Tab.Navigator>
@@ -152,6 +168,9 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: '#F2F2F0',
         alignItems: 'center', 
+      },
+      tabLabelContainer: {
+        alignItems: 'center',
       },
 })
 

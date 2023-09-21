@@ -7,6 +7,7 @@ const Home = ({navigation}) => {
   const womanIconMain = require('../assets/images/icons/여자아이콘.png')
   const SearchIcon = require('../assets/images/icons/검색.png')
   const CartIcon = require('../assets/images/icons/쇼핑.png')
+  const KimchiIcon = require('../assets/images/foods/김치아이콘.png')
 
   const [isButton1Clicked, setIsButton1Clicked] = useState(false);
 
@@ -38,19 +39,17 @@ const Home = ({navigation}) => {
           Recipe
         </Text>
       </View>
-
       <View style={styles.searchIconContainer}>
         <TouchableOpacity 
-        style={styles.searchButton} 
-        onPress={handleSearchIconPress}>
+          style={styles.searchButton} 
+          onPress={handleSearchIconPress}>
           <Image source={SearchIcon} style={styles.serachIcon}/>
         </TouchableOpacity>
       </View>
-
       <View style={styles.cartIconContainer}>
         <TouchableOpacity 
-        style={styles.cartButton} 
-        onPress={handleCartIconPress}>
+          style={styles.cartButton} 
+          onPress={handleCartIconPress}>
           <Image source={CartIcon} style={styles.cartIcon}/>
         </TouchableOpacity>
       </View>
@@ -61,10 +60,7 @@ const Home = ({navigation}) => {
           onPress={handleBox1Press}>
           <Text style={styles.buttonText}>홈</Text>
         </TouchableOpacity>
-
-      
         <View style={styles.verticalLine}/>
-
         <TouchableOpacity
           style={[styles.button2, { borderColor: isButton1Clicked ? 'black' : 'grey' }]}
           onPress={handleBox2Press}>
@@ -72,21 +68,35 @@ const Home = ({navigation}) => {
         </TouchableOpacity>
       </View>
 
-      <View style={styles.recomenContainer}>
-        <Text style={styles.recommenText}> 
-        비오는 날,  <Image source={rainIcon} style={styles.rainIcon}/>
-        </Text>
-        <Text style={styles.recommenText}>이런 요리는 어떤가요?</Text>
-      </View>
+      <ScrollView>
+        <View style={styles.recomenContainer}>
+          <Text style={styles.recommenText}> 
+          비오는 날,  <Image source={rainIcon} style={styles.rainIcon}/>
+          </Text>
+          <Text style={styles.recommenText}>이런 요리는 어떤가요?</Text>
+        </View>
 
-      <View style={styles.womenIconContainer}>
-        <Image source = {womanIconMain}/>
-      </View>
+        <View style={styles.womenIconContainer}>
+          <Image source = {womanIconMain}/>
+        </View>
 
-      <View style={styles.famousRecipeContainer}>
-        <View style={styles.horizontalLine}/>
-      </View>
+        <View style={styles.famousRecipeContainer}>
+          <Text style={styles.todaysRecipe}>
+            오늘의 인기 레시피
+          </Text>
+          <View style={styles.horizontalLine}/>
+        </View>
 
+        <View style={styles.simpleCookTextCotainer}>
+          <Text style={styles.simpleCookText}>요리하기 귀찮을 때,</Text>
+          <Text style={styles.simpleCookText}>간편식으로 뚝딱!</Text>
+        </View>
+        
+        <View >
+          <Image src='KimchiIcon' style={styles.KimchiIcon}/> 
+        </View>
+
+      </ScrollView>
     </View>
   );
 }
@@ -182,7 +192,7 @@ const styles = StyleSheet.create({
   recommenText: {
     fontFamily: 'Happiness-Sans-Bold',
     marginTop: 2,
-    fontSize: 20,
+    fontSize: 21,
   },
   rainIcon: {
     marginTop: 2,
@@ -200,13 +210,37 @@ const styles = StyleSheet.create({
     width: 358,
     height: 206,
     borderWidth: 2,
-    borderRadius: 30,
+    borderRadius: 8,
     marginTop: -12,
+    flex: 1,
   },
   horizontalLine: {
     borderTopWidth: 2,
     borderColor: 'black',
-    marginTop: 60,
+    marginTop: 50,
+  },
+  todaysRecipe: {
+    fontFamily: 'SUIT-SemiBold',
+    fontSize: 12,
+    color: '#496646',
+    paddingLeft: 10,
+    paddingTop: 10,
+  },
+
+////////////////////////////////////////
+  simpleCookTextCotainer: {
+    //borderWidth: 2,
+    width: 174,
+    height: 58,
+    marginTop: 80,
+  },
+  simpleCookText: {
+    fontSize: 21,
+    fontFamily: 'Happiness-Sans-Bold',
+  },
+
+  KimchiIcon: {
+
   },
 });
 
