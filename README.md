@@ -28,6 +28,7 @@ Started in Sep 2023 - Nov 2023 and resumed in July 2025, RefrigeApp aims to simp
   - `POST /api/foods`: Add food item
   - `GET /api/foods/:userId`: Retrieve user's food inventory
   - `DELETE /api/foods/:id`: Delete food item
+  - `PUT /api/foods/:id`: Update food details
 
 ## Setup
 1. Clone the repository: `git clone https://github.com/torigood/refrigeapp`
