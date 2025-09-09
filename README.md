@@ -2,7 +2,7 @@
 A mobile application to recommend recipes based on refrigerator inventory, built with React Native and Firebase (Work in Progress).
 
 ## Overview
-Started in 2019–2020 and resumed in July 2025, RefrigeApp aims to simplify meal planning by suggesting recipes based on available ingredients, with plans for AI-powered image analysis to automate inventory tracking.
+Started in Sep 2023 - Nov 2023 and resumed in July 2025, RefrigeApp aims to simplify meal planning by suggesting recipes based on available ingredients, with plans for AI-powered image analysis to automate inventory tracking.
 
 ## Features
 - **Current**:
@@ -10,7 +10,7 @@ Started in 2019–2020 and resumed in July 2025, RefrigeApp aims to simplify mea
   - Real-time data storage and retrieval using Firebase Firestore and Express.js
   - API communication via axios, tested with Postman
 - **Planned**:
-  - Recipe recommendations based on difficulty, time, and user ratings
+  - Recipe recommendations based on difficulty, time, and user ratings etc.
   - AI-powered image analysis for ingredient detection
 
 ## Tech Stack
@@ -43,7 +43,7 @@ Started in 2019–2020 and resumed in July 2025, RefrigeApp aims to simplify mea
 [Insert screenshots: Tab navigation UI, Postman API test results, Firebase Firestore data]
 
 ## Future Plans
-- Implement recipe recommendation system with filters (difficulty, time, ratings).
+- Implement recipe recommendation system with filters (difficulty, time, ratings etc).
 - Integrate AI for image-based ingredient detection.
 - Enhance UI with inventory tracking and user feedback features.
 
