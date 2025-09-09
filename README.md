@@ -12,6 +12,8 @@ Started in Sep 2023 - Nov 2023 and resumed in July 2025, RefrigeApp aims to simp
 - **Planned**:
   - Recipe recommendations based on difficulty, time, and user ratings etc.
   - AI-powered image analysis for ingredient detection
+  - Foods recommendation system based on weather
+  - Missing ingredients shopping list for selected recipes
 
 ## Tech Stack
 - **Frontend**: React Native (Expo), JavaScript, axios
