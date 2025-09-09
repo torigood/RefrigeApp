@@ -1,81 +1,52 @@
 # RefrigeApp
+A mobile application to recommend recipes based on refrigerator inventory, built with React Native and Firebase (Work in Progress).
 
-작업 시 backend node server.js 용 cmd refrigeApp npx expo strat 용 cmd 하나씩 띄우고 시작하기
+## Overview
+Started in 2019–2020 and resumed in July 2025, RefrigeApp aims to simplify meal planning by suggesting recipes based on available ingredients, with plans for AI-powered image analysis to automate inventory tracking.
 
-# 필수 설치 사항들
+## Features
+- **Current**:
+  - Tab-based navigation for user-friendly interface
+  - Real-time data storage and retrieval using Firebase Firestore and Express.js
+  - API communication via axios, tested with Postman
+- **Planned**:
+  - Recipe recommendations based on difficulty, time, and user ratings
+  - AI-powered image analysis for ingredient detection
 
-1. npm install -g react-native-cli
+## Tech Stack
+- **Frontend**: React Native (Expo), JavaScript, axios
+- **Backend**: Express.js (Node.js, Port: 8080), Firebase Firestore
+- **Tools**: Metro Bundler, Postman, Git
 
-2. npm install -g react-native
+## API Endpoints
+- **Authentication**:
+  - `POST /api/auth/register`: User registration
+  - `POST /api/auth/login`: User login
+- **Food Management**:
+  - `POST /api/foods`: Add food item
+  - `GET /api/foods/:userId`: Retrieve user's food inventory
+  - `DELETE /api/foods/:id`: Delete food item
 
-3. npm install -g @expo/cli
+## Setup
+1. Clone the repository: `git clone https://github.com/torigood/refrigeapp`
+2. Install dependencies: `npm install`
+3. Set up Firebase configuration (see `.env.example`)
+4. Run backend: `cd backend && node server.js`
+5. Run frontend: `npx expo start`
 
-4. npm install express
+## Troubleshooting
+- **Expo issues**: Run `npm install --force` or `npx expo install --fix` to resolve dependency conflicts.
+- **Metro issues**: Update Metro with `npm install metro@latest @expo/metro-config@latest`.
+- **More details**: Check [Expo documentation](https://docs.expo.dev).
 
-5. npm install body-parser
+## Screenshots
+[Insert screenshots: Tab navigation UI, Postman API test results, Firebase Firestore data]
 
-6. npm install axios (API 프론트엔드용)
+## Future Plans
+- Implement recipe recommendation system with filters (difficulty, time, ratings).
+- Integrate AI for image-based ingredient detection.
+- Enhance UI with inventory tracking and user feedback features.
 
-expo 실행이 안될 시 해결방법들
-
-# 1: 의존성 재설치 (권장)
-
-cmd# 1. node_modules와 lock 파일 삭제
-rmdir /s /q node_modules
-del package-lock.json
-del yarn.lock
-
-# 2. npm 캐시 클리어
-
-npm cache clean --force
-
-# 3. 의존성 재설치
-
-npm install
-
-해결 방법 2: Metro 버전 업데이트
-cmd# Metro 관련 패키지 업데이트
-npm install metro@latest @expo/metro-config@latest
-
-# Expo CLI 업데이트
-
-npm install -g @expo/cli@latest
-해결 방법 3: package.json 확인 및 수정
-package.json을 열어서 다음을 확인하세요:
-json{
-"dependencies": {
-"expo": "~49.0.0",
-"react": "18.2.0",
-"react-native": "0.72.4"
-},
-"devDependencies": {
-"@babel/core": "^7.20.0"
-}
-}
-버전이 다르다면 업데이트:
-npx expo install --fix
-
-# 서버 실행시
-
-cd backend -> node server.js
-
-# 디비 뭐 테스트?
-
-cd backend -> node db.js
-
-# EXPO 실행법
-
-npx expo start
-
-# POSTMAN API
-
-인증 관련:
-
-POST /api/auth/register - 회원가입
-POST /api/auth/login - 로그인
-
-식재료 관리:
-
-POST /api/foods - 식재료 추가
-GET /api/foods/:userId - 사용자별 식재료 조회
-DELETE /api/foods/:id - 식재료 삭제
+## Contact
+- GitHub: https://github.com/torigood
+- Email: kwansik.kim2004@gmail.com
