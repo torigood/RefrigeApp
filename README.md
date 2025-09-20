@@ -33,7 +33,7 @@ Started in Sep 2023 - Nov 2023 and resumed in July 2025, RefrigeApp aims to simp
 ## Setup
 1. Clone the repository: `git clone https://github.com/torigood/refrigeapp`
 2. Install dependencies: `npm install`
-3. Set up Firebase configuration (see `.env.example`)
+3. Set up Firebase configuration (see `serviceAccountKey.example`)
 4. Run backend: `cd backend && node server.js`
 5. Run frontend: `npx expo start`
 
